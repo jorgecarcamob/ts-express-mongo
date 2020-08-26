@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { IClient } from "../interfaces/Client";
 
 const ClientSchema = new Schema({
-  title: {
+  name: {
     type: String,
     required: true,
   },

@@ -107,10 +107,10 @@ class UserRoutes {
 
   public routes() {
     this.router.get("/", this.getAllUser);
-    this.router.get("/:username", this.getUser);
+    this.router.get("/:id", this.getUser);
     this.router.post("/", this.createUser);
-    this.router.put("/:username", this.updateUser);
-    this.router.delete("/:username", this.deleteUser);
+    this.router.put("/:id", this.updateUser);
+    this.router.delete("/:id", this.deleteUser);
   }
 }
 

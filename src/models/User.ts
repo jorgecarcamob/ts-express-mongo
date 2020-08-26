@@ -24,7 +24,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-  posts: [
+  clients: [
     {
       type: Schema.Types.ObjectId,
       ref: "post",

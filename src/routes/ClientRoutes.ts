@@ -107,10 +107,10 @@ class ClientRoutes {
 
   public routes() {
     this.router.get("/", this.getAllClient);
-    this.router.get("/:url", this.getClient);
+    this.router.get("/:id", this.getClient);
     this.router.post("/", this.createClient);
-    this.router.put("/:url", this.updateClient);
-    this.router.delete("/:url", this.deleteClient);
+    this.router.put("/:id", this.updateClient);
+    this.router.delete("/:id", this.deleteClient);
   }
 }
 

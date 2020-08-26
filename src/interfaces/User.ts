@@ -7,6 +7,6 @@ export interface IUser extends Document {
   password: string;
   created: Date;
   modified: Date;
-  posts: [IClient["_id"]];
+  clients: [IClient["_id"]];
   status: Boolean;
 }
