@@ -9,6 +9,7 @@ import initMongo from "./config/DbMongoClient";
 import indexRoutes from "./routes/IndexRoutes";
 import clientRoutes from "./routes/ClientRoutes";
 import userRoutes from "./routes/UserRoutes";
+import checkRoutes from "./routes/CheckRoutes";
 
 class Server {
   public app: express.Application;
@@ -21,7 +22,9 @@ class Server {
   }
 
   config() {
-    initMongo.connect();
+    setTimeout(() => {
+      initMongo.connect();
+    }, 10000 * 2);
     this.app.set("port", process.env.PORT || 4000);
     // Middlewares
     this.app.use(morgan("dev"));
@@ -36,6 +39,7 @@ class Server {
     this.app.use(indexRoutes);
     this.app.use("/api/clients", clientRoutes);
     this.app.use("/api/users", userRoutes);
+    this.app.use(checkRoutes);
   }
 
   errorMiddleware() {
@@ -63,4 +67,6 @@ class Server {
 }
 
 let server = new Server();
-server.start();
+setTimeout(() => {
+  server.start();
+}, 10000);

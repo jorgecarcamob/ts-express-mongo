@@ -8,14 +8,12 @@ class IndexRoutes {
     this.routes();
   }
 
-  routes() {
+  public routes() {
     this.router.get("/", (req, res) => {
-      res.send("Home");
+      res.send("Hello World XD!");
     });
   }
 }
 
 const indexRoutes = new IndexRoutes();
-indexRoutes.routes();
-
 export default indexRoutes.router;

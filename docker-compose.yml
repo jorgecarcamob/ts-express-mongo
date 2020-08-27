@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/app
+      - app_node_modules:/srv/app/node_modules
+
+volumes:
+  app_node_modules:
