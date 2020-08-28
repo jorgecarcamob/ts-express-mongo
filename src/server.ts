@@ -22,9 +22,7 @@ class Server {
   }
 
   config() {
-    setTimeout(() => {
-      initMongo.connect();
-    }, 10000 * 2);
+    initMongo.connect();
     this.app.set("port", process.env.PORT || 4000);
     // Middlewares
     this.app.use(morgan("dev"));
@@ -67,6 +65,4 @@ class Server {
 }
 
 let server = new Server();
-setTimeout(() => {
-  server.start();
-}, 10000);
+server.start();
