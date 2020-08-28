@@ -11,6 +11,6 @@ USER node
 WORKDIR /srv/app
 COPY --from=development --chown=root:root /srv/app/node_modules ./node_modules
 
-COPY . .
+COPY --chown=node:node . .
 
 CMD [ "yarn", "start" ]
