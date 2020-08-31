@@ -4,8 +4,7 @@ on:
   push:
     branches:    
       - develop
-        - 
-          
+        -   
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
