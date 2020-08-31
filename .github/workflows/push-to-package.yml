@@ -1,15 +1,15 @@
 name: Publish Image
-
 on:
   push:
     branches:    
-      - develop
-        -   
+      - develop   
 jobs:
-  my_first_job:
+  docker-push:
     runs-on: ubuntu-latest
     steps:
-      - name: My first step
+      - name: Checkout
+        uses: actions/checkout@v2.0.0      
+      - name: Publish Image
         # Uses the master branch of a public repository
         uses: matootie/github-docker@v3.0.0
         with:
